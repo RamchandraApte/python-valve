@@ -162,7 +162,7 @@ class SteamID(object):
                               "match type character".format(url.path))
             w = int(match.group("W"))
             y = w & 1
-            z = (w - y) / 2
+            z = (w - y) // 2
             return cls(z, y, letter_type_map[match.group("type")], universe)
         match = community64_regex.match(url.path)
         if match:
